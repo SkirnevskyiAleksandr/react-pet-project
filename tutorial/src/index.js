@@ -1,18 +1,22 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import './index.css';
 
 function BookList() {
   return (
-    <section>
+    <section className="booklist">
       <Book />
-      <Title />
-      <Author />
+      <Book />
+      <Book />
+      <Book />
     </section>
   )
 };
 const Book = () => {
-  return <article>
+  return <article className="book">
     <Image />
+    <Title />
+    <Author />
   </article>
 }
 const Image = () => {
