@@ -16,33 +16,41 @@ const Books = [
         number: 662,
         author: "Pahan"
     }
+    ,
+    {
+        img: 'https://images-na.ssl-images-amazon.com/images/I/81z6xJd6mrS._AC_UL254_SR254,254_.jpg',
+        title: "Big Shot Diary of a Wimpy Kid",
+        number: 662,
+        author: "Pahan"
+    }
 ]
 
-function BookList(books) {
+
+const BookList = () => {
     return (
-        <section>
-            {
-                Books.map((obj) => {
-                    return (
-                        <Book
-                            nam={obj}
-                        />
-                    )
-                })
-            }
-        </section>
+        Books.map((item) => {
+            return (
+                <Book
+                    name={item}
+                />
+            )
+        })
     )
 }
 
-function Book(props) {
+
+
+const Book = (props) => {
     return (
-        <section>
-            <img src={props.nam.img} alt="" />
-            <h1>{props.nam.title}</h1>
-            <h2>{props.nam.author}</h2>
-        </section>
+        <div>
+            <img src={props.name.img} alt="" />
+            <h1>{props.name.title}</h1>
+            <h2>{props.name.author}</h2>
+        </div>
     )
 }
+
+
 
 // function BookList() {
 //     return (
