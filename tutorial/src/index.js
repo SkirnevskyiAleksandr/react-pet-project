@@ -27,59 +27,41 @@ const Books = [
         author: "Pahan"
     }
 ]
-const BookList = () => {
+
+
+
+function BookList() {
     return (
-        <section className='booklist'>
+        <section className="booklist">
             {
-                Books.map((key) => {
+                Books.map((book) => {
                     return (
                         <Book
-                            name={key}
+                            {...book}
                         />
                     )
                 })
             }
-
         </section>
-
     )
+};
+const Book = ({ img, title, author, number }) => {
+    const exemp = (pr) => {
+        console.log(pr)
+    }
+    return <article className="book">
+
+        <img src={img} alt="dune" />
+        <h1 onClick={
+            () => {
+                exemp(author)
+            }}
+        >{title}</h1>
+        <h4>{author}</h4>
+        <h4>{number}</h4>
+
+    </article>
 }
-
-function Book(props) {
-    return (
-        <div>
-            <img src={props.name.img} alt="" />
-            <h2>{props.name.title}</h2>
-            <h3>{props.name.author}</h3>
-        </div>
-    )
-}
-
-
-// function BookList() {
-//     return (
-//         <section className="booklist">
-//             {
-//                 Books.map((book) => {
-//                     return (
-//                         <Book
-//                             name={book}
-//                         />
-//                     )
-//                 })
-//             }
-//         </section>
-//     )
-// };
-// const Book = (props) => {
-//     return <article className="book">
-//         <img src={props.name.img} alt="dune" />
-//         <h1>{props.name.title}</h1>
-//         <h4>{props.name.author}</h4>
-//         <h4>{props.name.number}</h4>
-
-//     </article>
-// }
 
 
 
