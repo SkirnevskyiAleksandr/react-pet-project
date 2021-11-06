@@ -4,6 +4,7 @@ import './index.css';
 
 const Books = [
     {
+        id: 1,
         img: 'https://images-na.ssl-images-amazon.com/images/I/91JV0+3BRGL._AC_UL254_SR254,254_.jpg',
         title: "random",
         number: 22,
@@ -11,6 +12,7 @@ const Books = [
     }
     ,
     {
+        id: 2,
         img: 'https://images-na.ssl-images-amazon.com/images/I/81z6xJd6mrS._AC_UL254_SR254,254_.jpg',
         title: "Big Shot Diary of a Wimpy Kid",
         number: 662,
@@ -18,38 +20,40 @@ const Books = [
     }
     ,
     {
+        id: 3,
         img: 'https://images-na.ssl-images-amazon.com/images/I/81z6xJd6mrS._AC_UL254_SR254,254_.jpg',
         title: "Big Shot Diary of a Wimpy Kid",
         number: 662,
         author: "Pahan"
     }
 ]
-
-
 const BookList = () => {
     return (
-        Books.map((item) => {
-            return (
-                <Book
-                    name={item}
-                />
-            )
-        })
+        <section className='booklist'>
+            {
+                Books.map((key) => {
+                    return (
+                        <Book
+                            name={key}
+                        />
+                    )
+                })
+            }
+
+        </section>
+
     )
 }
 
-
-
-const Book = (props) => {
+function Book(props) {
     return (
         <div>
             <img src={props.name.img} alt="" />
-            <h1>{props.name.title}</h1>
-            <h2>{props.name.author}</h2>
+            <h2>{props.name.title}</h2>
+            <h3>{props.name.author}</h3>
         </div>
     )
 }
-
 
 
 // function BookList() {
