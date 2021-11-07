@@ -46,17 +46,13 @@ function BookList() {
     )
 };
 const Book = ({ img, title, author, number }) => {
-    const exemp = (pr) => {
-        console.log(pr)
+    const Hsd = () => {
+        console.log('kkk')
     }
     return <article className="book">
 
         <img src={img} alt="dune" />
-        <h1 onClick={
-            () => {
-                exemp(author)
-            }}
-        >{title}</h1>
+        <h1 onClick={() => { console.log('sd') }} >{title}</h1>
         <h4>{author}</h4>
         <h4>{number}</h4>
 
